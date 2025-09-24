@@ -106,22 +106,32 @@ public class Main {
                 System.out.println("Invalid choice");
             }
         }
-        static void taskReverseArray(){
-        //Поміняти місцями елементи від початку жо кінця
-           int[] a;
+    static void taskReverseArray() {
+        int[] a;
 
-           if(auto){
-               a = randomArray();
-           }
-           else(!auto){
-               a = readArray();
-            }
-
-           for(int i = 0; i < a.length / 2; i++){
-
-           }
-
+        if (auto) {
+            a = randomArray();
+        } else {
+            a = readArray();
         }
+
+        int n = a.length;
+        int[] b = new int[n];
+        int j = n;
+        for (int i = 0; i < n; i++) {
+            b[j - 1] = a[i];
+            j--; // j = j - 1;
+        }
+
+        a = b;
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+
+}
         static void taskSortByDigitSum(){
 
         }
